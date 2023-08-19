@@ -18,7 +18,7 @@ jobs:
                 node-version: '16'
             - name: create env
               run: |
-                echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
+                echo ${{ secrets.MY_ENV }} > .env
 
             - name: Install dependencies
               run: npm install && cd ./frontend && npm install
@@ -34,6 +34,6 @@ jobs:
               with:
                 command: npm run test:e2e
                 start: npm start
-                wait-on: http://localhost:3000
+                wait-on: http://localhost:3001
 
 
