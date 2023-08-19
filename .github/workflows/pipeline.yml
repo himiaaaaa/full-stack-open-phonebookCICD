@@ -32,6 +32,6 @@ jobs:
                 MONGODB_URI: ${{ secrets.MONGODB_URI }}
               with:
                 command: npm run test:e2e
-                start: npm start
+                start: cd ./frontend && npm start
 
 
