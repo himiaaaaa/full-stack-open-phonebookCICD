@@ -4,6 +4,7 @@ module.exports = {
 		'commonjs': true,
 		'es2021': true,
 		'node': true,
+		"cypress/globals": true
 	},
 	'extends': 'eslint:recommended',
 	'overrides': [
@@ -43,5 +44,8 @@ module.exports = {
 				'after': true }
 		],
 		'no-console': 0
-	}
+	},
+	"plugins": [
+		"react", "jest", "cypress"
+	],
 }

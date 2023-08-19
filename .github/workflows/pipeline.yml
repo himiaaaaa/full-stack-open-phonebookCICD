@@ -16,12 +16,20 @@ jobs:
             - uses: actions/setup-node@v3
               with: 
                 node-version: '16'
+
             - name: Install dependencies
               run: npm install && cd ./frontend && npm install
+
             - name: Check style
               run: npm run lint && cd ./frontend && npm install
+
             - name: Build
               run: npm run build:ui
-            - name: Test
-              run: npm test && cd ./frontend && npm test
+
+            - name: e2e tests
+              uses: cypress-io/github-action@v5
+              with:
+                command: npm run test:e2e
+                start: npm run start:test
+                wait-on: http://localhost:3000
 
