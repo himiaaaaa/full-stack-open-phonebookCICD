@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('phonebook CICD', () => {
 	it('passes', () => {
 		cy.visit('http://localhost:3000')
