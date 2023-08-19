@@ -3,9 +3,9 @@ name: simple pipeline
 on:
     push:
         branches:
-            - master
+            - main
     pull_request:
-        branches: [master]
+        branches: [main]
         types: [opened, synchronize]
 
 jobs:
@@ -19,7 +19,9 @@ jobs:
             - name: Install dependencies
               run: npm install && cd ./frontend && npm install
             - name: Check style
-              run: npm run lint
+              run: npm run lint && cd ./frontend && npm install
             - name: Build
               run: npm run build:ui
+            - name: Test
+              run: npm test && cd ./frontend && npm test
 
