@@ -31,7 +31,7 @@ jobs:
               with:
                 command: npm run test:e2e
                 start: npm start
-                wait-on: http://localhost:3000
+                wait-on: http://localhost:3001
                 env: MONGODB_URI=${{secrets.MONGODB_URI}},PORT=3001
 
 
