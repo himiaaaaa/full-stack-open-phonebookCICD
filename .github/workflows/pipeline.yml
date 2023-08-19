@@ -26,12 +26,16 @@ jobs:
             - name: Build
               run: npm run build:ui
 
+            - name: create env
+              run: |
+                touch .env
+                echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
+
             - name: e2e tests
               uses: cypress-io/github-action@v5
               with:
                 command: npm run test:e2e
                 start: npm start
                 wait-on: http://localhost:3001
-                env: MONGODB_URI=${{secrets.MONGODB_URI}},PORT=3001
 
 
