@@ -16,6 +16,10 @@ jobs:
             - uses: actions/setup-node@v3
               with: 
                 node-version: '16'
+            - name: create env
+              run: |
+                touch .env
+                echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
 
             - name: Install dependencies
               run: npm install && cd ./frontend && npm install
@@ -25,11 +29,6 @@ jobs:
 
             - name: Build
               run: npm run build:ui
-
-            - name: create env
-              run: |
-                touch .env
-                echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
 
             - name: e2e tests
               uses: cypress-io/github-action@v5
