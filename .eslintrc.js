@@ -4,7 +4,7 @@ module.exports = {
 		'commonjs': true,
 		'es2021': true,
 		'node': true,
-		"cypress/globals": true
+		'cypress/globals': true
 	},
 	'extends': 'eslint:recommended',
 	'overrides': [
@@ -12,6 +12,9 @@ module.exports = {
 	'parserOptions': {
 		'ecmaVersion': 'latest'
 	},
+	'plugins': [
+		'react', 'cypress'
+	],
 	'rules': {
 		'indent': [
 			'error',
