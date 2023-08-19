@@ -18,6 +18,7 @@ jobs:
                 node-version: '20'
             - name: create env
               run: |
+                touch .env
                 echo ${{ secrets.MY_ENV }} > .env
 
             - name: Install dependencies
