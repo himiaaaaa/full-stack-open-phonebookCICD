@@ -18,7 +18,6 @@ jobs:
                 node-version: '16'
             - name: create env
               run: |
-                touch .env
                 echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
 
             - name: Install dependencies
