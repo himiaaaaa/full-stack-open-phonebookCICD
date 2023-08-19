@@ -122,6 +122,9 @@ const errorHandler = (error, request, response, next) => {
 
 app.use(errorHandler)
 
+app.get('/version', (req, res) => {
+	res.send('1')
+})
 
 // eslint-disable-next-line no-undef
 const port = process.env.PORT
