@@ -123,7 +123,7 @@ const errorHandler = (error, request, response, next) => {
 app.use(errorHandler)
 
 app.get('/version', (req, res) => {
-	res.send('10')
+	res.send('ask for review')
 })
 
 // eslint-disable-next-line no-undef
